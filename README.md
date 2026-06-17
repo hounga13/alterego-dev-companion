@@ -71,8 +71,12 @@ Once configured, you can call any persona using the **trigger command and the na
 
 > **Call Example**: "Turn on the barista persona and look at the bug in this code." or `/alterego barista refactor this code`
 
+### 🔄 Sticky Mode & Deactivation
+- **Sticky Mode**: Once a persona is activated, it remains active throughout the entire conversation session. The agent will keep using that persona's tone and output template for subsequent prompts without needing the trigger command every time.
+- **Deactivation**: To turn off the active persona and revert to the standard AI helper, type `/alterego off` or `/persona off`. The roleplay and partitioned output formatting will be disabled immediately.
+
 ### 🗣️ Output Protocol
-All responses generated under this skill are strictly partitioned into three sections:
+All responses generated under this skill are strictly partitioned into three sections (except when deactivated):
 1. **🗣️ [Persona Name] Spoke**: Character dialogue and dramatic/humorous roleplay.
 2. **🛠️ Serious Engineering Take**: Bullet points detailing technical issues (root causes, optimizations).
 3. **💻 Refactored Code**: Production-grade, fully functional code blocks ready to be pasted.

@@ -71,8 +71,12 @@ copy SKILL.md "%APPDATA%\antigravity\plugins\alterego-dev-companion\skills\"
 
 > **唤醒示例**: “开启咖啡师角色，帮我看看这段代码里的 bug” 或 `/alterego barista 帮我重构这段代码`
 
+### 🔄 会话持续与关闭指令 (Sticky Mode & Deactivation)
+- **持续模式 (Sticky Mode)**: 角色一旦激活，将在整个对话会话中保持活跃状态。AI 助手将在随后的问题中继续使用该角色的语气和输出模板，而无需每次都输入触发指令。
+- **关闭指令 (Deactivation)**: 要关闭当前活跃的角色并返回标准 AI 助手，请输入 `/alterego off` 或 `/persona off`。角色扮演和三分段输出格式将被立即禁用。
+
 ### 🗣️ 输出协议 (Output Protocol)
-本技能包的响应格式严格分为以下三个板块：
+本技能包的响应格式严格分为以下三个板块（停用时除外）：
 1. **🗣️ [角色名称] Spoke**: 角色的剧场对话与具有沉浸感的趣味角色扮演。
 2. **🛠️ Serious Engineering Take**: 冰冷客观的技术反馈（列出核心问题、优化方向等）。
 3. **💻 Refactored Code**: 可直接复制的生产级高质量重构代码块。

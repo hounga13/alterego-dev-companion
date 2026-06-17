@@ -71,8 +71,12 @@ Una vez configurado, puedes invocar a cualquier personaje usando el **comando de
 
 > **Ejemplo de llamada**: "Activa el personaje de barista y mira el error en este código." o `/alterego barista refactoriza este código`
 
+### 🔄 Persistencia de Sesión y Desactivación (Sticky Mode & Deactivation)
+- **Modo Sticky**: Una vez activada una persona, se mantiene activa durante toda la sesión de chat. El agente continuará usando el tono y la plantilla de salida de esa persona en sus respuestas sin necesidad de volver a ingresar el comando.
+- **Desactivación**: Para apagar el modo de persona y regresar al asistente estándar, escribe `/alterego off` o `/persona off`. El juego de rol y el formato de salida dividido se desactivarán de inmediato.
+
 ### 🗣️ Protocolo de salida
-Todas las respuestas generadas bajo esta habilidad se dividen estrictamente en tres secciones:
+Todas las respuestas generadas bajo esta habilidad se dividen estrictamente en tres secciones (excepto cuando se desactivan):
 1. **🗣️ [Nombre del Personaje] Spoke**: Diálogo del personaje y juego de rol dramático/humorístico.
 2. **🛠️ Serious Engineering Take**: Puntos clave que detallan los problemas técnicos (causas raíz, optimizaciones).
 3. **💻 Refactored Code**: Código refactorizado y listo para ser copiado.
