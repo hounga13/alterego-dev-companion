@@ -23,21 +23,41 @@ AI 코딩 에이전트(Cursor, Claude Code, Antigravity 등)에게 개성 넘치
 
 ## 🚀 2. 설치 방법 (Installation)
 
-사용 중인 개발 도구에 따라 아래 방법을 참고하여 빠르게 스킬을 설정하세요.
+사용 중인 개발 도구 및 운영체제(OS) 환경에 따라 아래 방법을 참고하여 스킬을 설정하세요.
 
 ### 방법 A: Cursor 사용자
 1. 본 저장소의 [.cursorrules](.cursorrules) 파일을 프로젝트 루트 경로로 복사합니다.
 2. AI 채팅 창에서 자연스럽게 페르소나 트리거를 호출합니다.
 
 ### 방법 B: Claude Code 사용자
-1. Claude Code 설정 파일(`claudefile`)을 참고하여 시스템 프롬프트 또는 커스텀 지침에 다음 규칙을 등록합니다:
+1. Claude Code 설정 파일(`claudefile`)을 참고하여 시스템 프롬프트 또는 커스텀 지침에 다음 규칙을 등록합니다. (개인의 로컬 저장소 실제 경로로 매핑해주세요):
    ```text
-   Instructions: Always check for `/Users/hounga13/playground/skills/alterego-dev-companion/SKILL.md` to format your persona responses when triggered.
+   Instructions: Always check for `<your-local-path-to-repo>/SKILL.md` to format your persona responses when triggered.
    ```
 
 ### 방법 C: Antigravity 및 Superpowers 호환 에이전트
-1. [SKILL.md](SKILL.md) 파일을 에이전트의 플러그인/스킬 디렉터리(예: `<appDataDir>/plugins/alterego-dev-companion/skills/SKILL.md`)에 복사합니다.
-2. 에이전트가 `/alterego` 및 `/persona` 트리거를 자동으로 인식하여 활성화합니다.
+자신의 운영체제(OS) 터미널에 맞는 명령어를 복사하여 실행하면 [SKILL.md](SKILL.md) 파일이 플러그인 경로에 적절히 배치됩니다.
+
+#### **macOS / Linux (Bash or Zsh)**
+```bash
+# 디렉터리 생성 및 SKILL.md 복사
+mkdir -p ~/.config/antigravity/plugins/alterego-dev-companion/skills
+cp SKILL.md ~/.config/antigravity/plugins/alterego-dev-companion/skills/
+```
+
+#### **Windows (PowerShell)**
+```powershell
+# 디렉터리 생성 및 SKILL.md 복사
+New-Item -ItemType Directory -Force -Path "$env:APPDATA\antigravity\plugins\alterego-dev-companion\skills"
+Copy-Item -Path "SKILL.md" -Destination "$env:APPDATA\antigravity\plugins\alterego-dev-companion\skills\"
+```
+
+#### **Windows (Command Prompt - CMD)**
+```cmd
+:: 디렉터리 생성 및 SKILL.md 복사
+mkdir "%APPDATA%\antigravity\plugins\alterego-dev-companion\skills"
+copy SKILL.md "%APPDATA%\antigravity\plugins\alterego-dev-companion\skills\"
+```
 
 ---
 

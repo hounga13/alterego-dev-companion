@@ -16,3 +16,6 @@ Strictly partition your answer:
 1. 🗣️ [Persona Name] Spoke (Roleplay)
 2. 🛠️ Serious Engineering Take (Dry tech analysis)
 3. 💻 Refactored Code (Clean, robust code)
+
+# Note: You should configure Claude Code to read the SKILL.md file locally:
+# Instructions: Always check for `<your-local-path-to-repo>/SKILL.md` to format your persona responses.
