@@ -1,12 +1,12 @@
 # 🎭 AlterEgo-DevCompanion
 
-An agentic skills pack that equips your AI coding assistants with distinct developer personalities—making code reviews and pair programming both highly informative and entertaining.
-
-Compatible with **Claude Code, Cursor, Antigravity, Gemini CLI, Codex App, Codex CLI, GitHub Copilot CLI, Kimi Code, OpenCode, and Pi.**
+AI 코딩 에이전트(Cursor, Claude Code, Antigravity 등)에게 개성 넘치는 개발자 페르소나를 부여하여, 코드 리뷰와 페어 프로그래밍을 유익하고 재미있게 만들어주는 에이전트 스킬 팩입니다.
 
 ---
 
-## 🌟 Persona Lineup (8종 페르소나 라인업)
+## 🌟 1. 개요 및 페르소나 라인업 (Overview)
+
+지루하고 밋밋한 코드 리뷰는 그만! 아래의 8종 페르소나를 활성화하여 개성 만점의 파트너와 함께 코딩해 보세요.
 
 | 캐릭터 | 페르소나 | 주요 특징 및 역할 | 활성화 트리거 |
 | :---: | :--- | :--- | :--- |
@@ -21,37 +21,60 @@ Compatible with **Claude Code, Cursor, Antigravity, Gemini CLI, Codex App, Codex
 
 ---
 
-## 🛠️ Multi-Agent Integration Guide
+## 🚀 2. 설치 방법 (Installation)
 
-This skill can be integrated into almost any modern AI coding client. Here is how you can set it up:
+사용 중인 개발 도구에 따라 아래 방법을 참고하여 빠르게 스킬을 설정하세요.
 
-### 1. Cursor (`.cursorrules`)
-Create or update a `.cursorrules` file in the root of your project:
-```json
-{
-  "instruction": "Read and adhere to the guidelines defined in SKILL.md. When the user types /alterego <persona> or /persona <persona>, adopt that persona strictly according to the SKILL.md specifications."
-}
-```
+### 방법 A: Cursor 사용자
+1. 본 저장소의 [.cursorrules](.cursorrules) 파일을 프로젝트 루트 경로로 복사합니다.
+2. AI 채팅 창에서 자연스럽게 페르소나 트리거를 호출합니다.
 
-### 2. Claude Code (`claudefile` / System Prompt)
-For Claude Code, you can register this skill as a custom system instructions block or place it in your local configurations:
-```text
-Instructions: Always check for `/Users/hounga13/playground/skills/alterego-dev-companion/SKILL.md` to format your persona responses when triggered.
-```
+### 방법 B: Claude Code 사용자
+1. Claude Code 설정 파일(`claudefile`)을 참고하여 시스템 프롬프트 또는 커스텀 지침에 다음 규칙을 등록합니다:
+   ```text
+   Instructions: Always check for `/Users/hounga13/playground/skills/alterego-dev-companion/SKILL.md` to format your persona responses when triggered.
+   ```
 
-### 3. Antigravity & Superpowers compatible Harnesses
-Copy the `SKILL.md` to your plugins/skills directory (e.g., `<appDataDir>/plugins/alterego-dev-companion/skills/SKILL.md`). The harness will automatically register the triggers:
-- `/alterego <persona>`
-- `/persona <persona>`
-
-### 4. Codex CLI, Gemini CLI, Kimi Code, OpenCode, Pi, etc.
-Include the content of `SKILL.md` as a prefix in your system instructions or append it to your active agent context.
+### 방법 C: Antigravity 및 Superpowers 호환 에이전트
+1. [SKILL.md](SKILL.md) 파일을 에이전트의 플러그인/스킬 디렉터리(예: `<appDataDir>/plugins/alterego-dev-companion/skills/SKILL.md`)에 복사합니다.
+2. 에이전트가 `/alterego` 및 `/persona` 트리거를 자동으로 인식하여 활성화합니다.
 
 ---
 
-## 💻 Output Format
+## 💬 3. 사용 방법 및 예시 (Usage & Demo)
 
-When triggered, the agent will split its output into three clean sections:
-1.  **🗣️ [Persona Name] Spoke** - Character dialogue (with humor and style).
-2.  **🛠️ Serious Engineering Take** - Detailed technical analysis, issues found, and fixes.
-3.  **💻 Refactored Code** - Production-ready, fully functional code block.
+스킬이 설정되면, 에이전트 대화 도중 **트리거 단어와 페르소나 이름**을 사용해 캐릭터를 활성화할 수 있습니다.
+
+> **호출 예시**: "바리스타 페르소나를 켜고 이 코드의 버그를 봐줘." 또는 `/alterego barista 이 코드 리팩토링해줘`
+
+### 🗣️ 출력 프로토콜 (Output Protocol)
+본 스킬로 생성되는 응답은 항상 다음 3단계 구조로 명확하게 구분되어 출력됩니다:
+1. **🗣️ [페르소나 이름] Spoke**: 선택된 캐릭터의 개성 넘치는 대화 및 상황극 리액션.
+2. **🛠️ Serious Engineering Take**: 가차 없고 냉철한 엔지니어링 피드백 (오류 원인, 개선 방향).
+3. **💻 Refactored Code**: 곧바로 복사해서 붙여넣을 수 있는 프로덕션 품질의 리팩토링 코드 블록.
+
+### 💡 실제 작동 시뮬레이션
+* **힐링 바리스타 (`/alterego barista`) 활성화 시**:
+  > **🗣️ Healing Barista Spoke**
+  > 안녕하세요! 잠시 키보드에서 손을 떼고, 따뜻한 라떼 한 잔 드셔보세요. ☕ 오늘 코딩하시느라 정말 고생 많으셨어요. 작성하신 로직은 직관적이라 참 좋네요! 다만 target_id가 없을 때 `None`이 리턴되면 오류가 날 수 있으니 더 안전하게 고쳐볼까요?
+  > 
+  > **🛠️ Serious Engineering Take**
+  > - target_id 탐색 실패 시 예외 또는 디폴트 객체 반환 설계가 누락되었습니다.
+  > 
+  > **💻 Refactored Code**
+  > ```python
+  > def find_user(users, target_id):
+  >     return next((u for u in users if u.get('id') == target_id), None)
+  > ```
+
+---
+
+## 🛠️ 4. 기술 가이드 및 설정 파일 구성 (Technical Reference)
+
+본 프로젝트는 AI 에이전트가 `SKILL.md`에 정의된 페르소나 지침을 쉽게 파싱하도록 템플릿화되어 있습니다.
+
+### 파일 구조
+* [SKILL.md](SKILL.md): 8종 페르소나의 코어 가이드 및 한국어 어조 정의, 응답 템플릿 계약 규약.
+* [.cursorrules](.cursorrules): Cursor AI 연동용 시스템 룰 설정.
+* [claudefile](claudefile): Claude Code 연동용 커스텀 지침서.
+* [assets/](assets/): 각 페르소나의 시각화 캐릭터 일러스트 에셋 폴더.

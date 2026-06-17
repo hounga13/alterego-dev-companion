@@ -1,0 +1,43 @@
+name: Validate AlterEgo Skills
+
+on:
+  push:
+    branches: [ main, alterego-local-test-integration ]
+  pull_request:
+    branches: [ main, alterego-local-test-integration ]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Verify Essential Files Exist
+        run: |
+          echo "Checking essential files..."
+          for file in SKILL.md README.md .cursorrules claudefile; do
+            if [ ! -f "$file" ]; then
+              echo "Error: Required file '$file' is missing!"
+              exit 1
+            fi
+            echo "✓ '$file' exists."
+          done
+
+      - name: Validate SKILL.md Frontmatter
+        run: |
+          echo "Verifying SKILL.md frontmatter syntax..."
+          # YAML frontmatter must start and end with '---'
+          FIRST_LINE=$(head -n 1 SKILL.md)
+          if [ "$FIRST_LINE" != "---" ]; then
+            echo "Error: SKILL.md does not start with ---"
+            exit 1
+          fi
+          
+          # Check for key attributes in frontmatter
+          grep -q "name:" SKILL.md || { echo "Error: 'name' attribute is missing in SKILL.md frontmatter"; exit 1; }
+          grep -q "description:" SKILL.md || { echo "Error: 'description' attribute is missing"; exit 1; }
+          grep -q "contracts:" SKILL.md || { echo "Error: 'contracts' block is missing"; exit 1; }
+          grep -q "triggers:" SKILL.md || { echo "Error: 'triggers' block is missing"; exit 1; }
+          echo "✓ SKILL.md frontmatter validation passed."
