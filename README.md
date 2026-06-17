@@ -1,6 +1,6 @@
 # 🎭 AlterEgo-DevCompanion
 
-[English](README.md) | [한국어](README.ko.md) | [日本語](README.ja.md)
+[English](README.md) | [한국어](README.ko.md) | [日本語](README.ja.md) | [Español](README.es.md) | [简体中文](README.zh.md)
 
 ---
 
@@ -39,26 +39,26 @@ Follow the guides below to set up the AlterEgo skill package depending on your p
    Instructions: Always check for `<your-local-path-to-repo>/SKILL.md` to format your persona responses when triggered.
    ```
 
-### Method C: Antigravity & Superpowers compatible harnesses
-Run the copy commands corresponding to your operating system terminal to deploy the [SKILL.md](SKILL.md) file to the plugins directory.
+### Method C: Antigravity & Superpowers compatible harnesses (Recommended)
+You can automatically deploy the [SKILL.md](SKILL.md) file to your local agent configuration folder using our script installers.
 
-#### **macOS / Linux (Bash or Zsh)**
+#### **macOS / Linux (Bash/Zsh)**
+Run the script installer:
 ```bash
-# Create directories and copy SKILL.md
-mkdir -p ~/.config/antigravity/plugins/alterego-dev-companion/skills
-cp SKILL.md ~/.config/antigravity/plugins/alterego-dev-companion/skills/
+./install.sh
 ```
+*(Alternative manual setup: `mkdir -p ~/.config/antigravity/plugins/alterego-dev-companion/skills && cp SKILL.md ~/.config/antigravity/plugins/alterego-dev-companion/skills/`)*
 
 #### **Windows (PowerShell)**
+Run the script installer:
 ```powershell
-# Create directories and copy SKILL.md
-New-Item -ItemType Directory -Force -Path "$env:APPDATA\antigravity\plugins\alterego-dev-companion\skills"
-Copy-Item -Path "SKILL.md" -Destination "$env:APPDATA\antigravity\plugins\alterego-dev-companion\skills\"
+.\install.ps1
 ```
+*(Alternative manual setup: `New-Item -ItemType Directory -Force -Path "$env:APPDATA\antigravity\plugins\alterego-dev-companion\skills"; Copy-Item -Path "SKILL.md" -Destination "$env:APPDATA\antigravity\plugins\alterego-dev-companion\skills\"`)*
 
 #### **Windows (Command Prompt - CMD)**
+Manual setup:
 ```cmd
-:: Create directories and copy SKILL.md
 mkdir "%APPDATA%\antigravity\plugins\alterego-dev-companion\skills"
 copy SKILL.md "%APPDATA%\antigravity\plugins\alterego-dev-companion\skills\"
 ```

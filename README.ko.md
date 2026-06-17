@@ -1,6 +1,6 @@
 # 🎭 AlterEgo-DevCompanion
 
-[English](README.md) | [한국어](README.ko.md) | [日本語](README.ja.md)
+[English](README.md) | [한국어](README.ko.md) | [日本語](README.ja.md) | [Español](README.es.md) | [简体中文](README.zh.md)
 
 ---
 
@@ -39,26 +39,26 @@ AI 코딩 에이전트(Cursor, Claude Code, Antigravity 등)에게 개성 넘치
    Instructions: Always check for `<your-local-path-to-repo>/SKILL.md` to format your persona responses when triggered.
    ```
 
-### 방법 C: Antigravity 및 Superpowers 호환 에이전트
-자신의 운영체제(OS) 터미널에 맞는 명령어를 복사하여 실행하면 [SKILL.md](SKILL.md) 파일이 플러그인 경로에 적절히 배치됩니다.
+### 방법 C: Antigravity 및 Superpowers 호환 에이전트 (권장)
+제공된 설치 자동화 스크립트를 실행하여 편리하게 [SKILL.md](SKILL.md) 스킬 파일을 설치 폴더에 배포할 수 있습니다.
 
 #### **macOS / Linux (Bash or Zsh)**
+터미널에서 설치 스크립트 실행:
 ```bash
-# 디렉터리 생성 및 SKILL.md 복사
-mkdir -p ~/.config/antigravity/plugins/alterego-dev-companion/skills
-cp SKILL.md ~/.config/antigravity/plugins/alterego-dev-companion/skills/
+./install.sh
 ```
+*(수동 설치 시: `mkdir -p ~/.config/antigravity/plugins/alterego-dev-companion/skills && cp SKILL.md ~/.config/antigravity/plugins/alterego-dev-companion/skills/`)*
 
 #### **Windows (PowerShell)**
+파워쉘에서 설치 스크립트 실행:
 ```powershell
-# 디렉터리 생성 및 SKILL.md 복사
-New-Item -ItemType Directory -Force -Path "$env:APPDATA\antigravity\plugins\alterego-dev-companion\skills"
-Copy-Item -Path "SKILL.md" -Destination "$env:APPDATA\antigravity\plugins\alterego-dev-companion\skills\"
+.\install.ps1
 ```
+*(수동 설치 시: `New-Item -ItemType Directory -Force -Path "$env:APPDATA\antigravity\plugins\alterego-dev-companion\skills"; Copy-Item -Path "SKILL.md" -Destination "$env:APPDATA\antigravity\plugins\alterego-dev-companion\skills\"`)*
 
 #### **Windows (Command Prompt - CMD)**
+수동 설치 명령어:
 ```cmd
-:: 디렉터리 생성 및 SKILL.md 복사
 mkdir "%APPDATA%\antigravity\plugins\alterego-dev-companion\skills"
 copy SKILL.md "%APPDATA%\antigravity\plugins\alterego-dev-companion\skills\"
 ```
