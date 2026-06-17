@@ -3,11 +3,19 @@ Write-Host "----------------------------------------------------"
 
 # Define destination directory
 $DestDir = "$env:APPDATA\antigravity\plugins\alterego-dev-companion\skills"
+$DestFile = Join-Path $DestDir "SKILL.md"
 
 # Create destination directory if it doesn't exist
 if (-not (Test-Path -Path $DestDir)) {
     Write-Host "Creating directory: $DestDir"
     New-Item -ItemType Directory -Force -Path $DestDir | Out-Null
+}
+
+# Backup existing SKILL.md if it exists
+if (Test-Path -Path $DestFile) {
+    $BackupFile = $DestFile + ".bak"
+    Write-Host "⚠️ Existing skill file found! Backing up to: $BackupFile" -ForegroundColor Yellow
+    Copy-Item -Path $DestFile -Destination $BackupFile -Force
 }
 
 # Copy SKILL.md
