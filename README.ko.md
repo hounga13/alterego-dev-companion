@@ -39,7 +39,7 @@ AI 코딩 에이전트(Cursor, Claude Code, Antigravity 등)에게 개성 넘치
    Instructions: Always check for `<your-local-path-to-repo>/SKILL.md` to format your persona responses when triggered.
    ```
 
-### 방법 C: Antigravity 및 Superpowers 호환 에이전트 (권장)
+### 방법 C: Antigravity 및 호환 에이전트 플러그인 (권장)
 제공된 설치 자동화 스크립트를 실행하여 편리하게 [SKILL.md](SKILL.md) 스킬 파일을 설치 폴더에 배포할 수 있습니다.
 
 #### **macOS / Linux (Bash or Zsh)**

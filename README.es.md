@@ -39,7 +39,7 @@ Sigue las guías a continuación para configurar el paquete de habilidades Alter
    Instructions: Always check for `<your-local-path-to-repo>/SKILL.md` to format your persona responses when triggered.
    ```
 
-### Método C: Antigravity y arneses compatibles con Superpowers (Recomendado)
+### Método C: Antigravity y arneses de agentes compatibles (Recomendado)
 Puedes desplegar automáticamente el archivo [SKILL.md](SKILL.md) en tu directorio de plugins usando nuestros instaladores de script.
 
 #### **macOS / Linux (Bash o Zsh)**

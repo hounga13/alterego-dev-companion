@@ -39,7 +39,7 @@
    Instructions: Always check for `<your-local-path-to-repo>/SKILL.md` to format your persona responses when triggered.
    ```
 
-### 方法 C: 兼容 Antigravity 和 Superpowers 的客户端 (推荐)
+### 方法 C: 兼容 Antigravity 及其他代理客户端 (推荐)
 您可以使用我们提供的安装脚本，自动将 [SKILL.md](SKILL.md) 部署到您的插件目录。
 
 #### **macOS / Linux (Bash 或 Zsh)**

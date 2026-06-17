@@ -39,7 +39,7 @@ Follow the guides below to set up the AlterEgo skill package depending on your p
    Instructions: Always check for `<your-local-path-to-repo>/SKILL.md` to format your persona responses when triggered.
    ```
 
-### Method C: Antigravity & Superpowers compatible harnesses (Recommended)
+### Method C: Antigravity & Compatible Agent Harnesses (Recommended)
 You can automatically deploy the [SKILL.md](SKILL.md) file to your local agent configuration folder using our script installers.
 
 #### **macOS / Linux (Bash/Zsh)**
