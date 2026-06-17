@@ -45,14 +45,14 @@ Puedes desplegar automáticamente el archivo [SKILL.md](SKILL.md) en tu director
 #### **macOS / Linux (Bash o Zsh)**
 Ejecuta el script instalador:
 ```bash
-./install.sh
+./bin/install.sh
 ```
 *(Configuración manual alternativa: `mkdir -p ~/.config/antigravity/plugins/alterego-dev-companion/skills && cp SKILL.md ~/.config/antigravity/plugins/alterego-dev-companion/skills/`)*
 
 #### **Windows (PowerShell)**
 Ejecuta el script instalador:
 ```powershell
-.\install.ps1
+.\bin\install.ps1
 ```
 *(Configuración manual alternativa: `New-Item -ItemType Directory -Force -Path "$env:APPDATA\antigravity\plugins\alterego-dev-companion\skills"; Copy-Item -Path "SKILL.md" -Destination "$env:APPDATA\antigravity\plugins\alterego-dev-companion\skills\"`)*
 

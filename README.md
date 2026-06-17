@@ -45,14 +45,14 @@ You can automatically deploy the [SKILL.md](SKILL.md) file to your local agent c
 #### **macOS / Linux (Bash/Zsh)**
 Run the script installer:
 ```bash
-./install.sh
+./bin/install.sh
 ```
 *(Alternative manual setup: `mkdir -p ~/.config/antigravity/plugins/alterego-dev-companion/skills && cp SKILL.md ~/.config/antigravity/plugins/alterego-dev-companion/skills/`)*
 
 #### **Windows (PowerShell)**
 Run the script installer:
 ```powershell
-.\install.ps1
+.\bin\install.ps1
 ```
 *(Alternative manual setup: `New-Item -ItemType Directory -Force -Path "$env:APPDATA\antigravity\plugins\alterego-dev-companion\skills"; Copy-Item -Path "SKILL.md" -Destination "$env:APPDATA\antigravity\plugins\alterego-dev-companion\skills\"`)*
 

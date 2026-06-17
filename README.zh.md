@@ -45,14 +45,14 @@
 #### **macOS / Linux (Bash 或 Zsh)**
 在终端中运行安装脚本:
 ```bash
-./install.sh
+./bin/install.sh
 ```
 *(手动安装命令: `mkdir -p ~/.config/antigravity/plugins/alterego-dev-companion/skills && cp SKILL.md ~/.config/antigravity/plugins/alterego-dev-companion/skills/`)*
 
 #### **Windows (PowerShell)**
 在 PowerShell 中运行安装脚本:
 ```powershell
-.\install.ps1
+.\bin\install.ps1
 ```
 *(手动安装命令: `New-Item -ItemType Directory -Force -Path "$env:APPDATA\antigravity\plugins\alterego-dev-companion\skills"; Copy-Item -Path "SKILL.md" -Destination "$env:APPDATA\antigravity\plugins\alterego-dev-companion\skills\"`)*
 

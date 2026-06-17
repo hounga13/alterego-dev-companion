@@ -45,14 +45,14 @@ AI 코딩 에이전트(Cursor, Claude Code, Antigravity 등)에게 개성 넘치
 #### **macOS / Linux (Bash or Zsh)**
 터미널에서 설치 스크립트 실행:
 ```bash
-./install.sh
+./bin/install.sh
 ```
 *(수동 설치 시: `mkdir -p ~/.config/antigravity/plugins/alterego-dev-companion/skills && cp SKILL.md ~/.config/antigravity/plugins/alterego-dev-companion/skills/`)*
 
 #### **Windows (PowerShell)**
 파워쉘에서 설치 스크립트 실행:
 ```powershell
-.\install.ps1
+.\bin\install.ps1
 ```
 *(수동 설치 시: `New-Item -ItemType Directory -Force -Path "$env:APPDATA\antigravity\plugins\alterego-dev-companion\skills"; Copy-Item -Path "SKILL.md" -Destination "$env:APPDATA\antigravity\plugins\alterego-dev-companion\skills\"`)*
 

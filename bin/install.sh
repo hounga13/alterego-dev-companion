@@ -22,12 +22,12 @@ if [ -f "$DEST_FILE" ]; then
 fi
 
 # Copy SKILL.md
-if [ -f "SKILL.md" ]; then
+if [ -f "../SKILL.md" ]; then
   echo "Copying SKILL.md to $DEST_DIR..."
-  cp SKILL.md "$DEST_DIR/"
+  cp ../SKILL.md "$DEST_DIR/"
   echo "✓ Successfully installed AlterEgo-DevCompanion!"
 else
-  echo "Error: SKILL.md not found in the current directory."
-  echo "Please run this script from the project root."
+  echo "Error: SKILL.md not found in the parent directory."
+  echo "Please run this script from the project root or the bin directory."
   exit 1
 fi
